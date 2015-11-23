@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
         if let detail = self.detailItem {
             if let imageView = self.detailImageView {
                 imageView.image = UIImage(named: detail)
+                self.title = detail
             }
         }
     }
