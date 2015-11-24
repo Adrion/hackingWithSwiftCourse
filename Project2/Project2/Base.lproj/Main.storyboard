@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="52y-E6-pLH">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13O-2c-NRO">
+                                <rect key="frame" x="200" y="100" width="200" height="100"/>
+                                <state key="normal" image="us"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upo-Xy-YkI">
+                                <rect key="frame" x="200" y="371" width="200" height="100"/>
+                                <state key="normal" image="us"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-Xn-5TI">
+                                <rect key="frame" x="200" y="230" width="200" height="100"/>
+                                <state key="normal" image="us"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="13O-2c-NRO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ok-KD-1DN"/>
+                            <constraint firstItem="upo-Xy-YkI" firstAttribute="top" secondItem="z5u-Xn-5TI" secondAttribute="bottom" constant="41" id="Ots-T2-HYw"/>
+                            <constraint firstItem="upo-Xy-YkI" firstAttribute="centerX" secondItem="z5u-Xn-5TI" secondAttribute="centerX" id="P1V-2Y-JCC"/>
+                            <constraint firstItem="13O-2c-NRO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="ZxT-ss-XUh"/>
+                            <constraint firstItem="z5u-Xn-5TI" firstAttribute="centerX" secondItem="13O-2c-NRO" secondAttribute="centerX" id="dMj-DQ-kBy"/>
+                            <constraint firstItem="z5u-Xn-5TI" firstAttribute="top" secondItem="13O-2c-NRO" secondAttribute="bottom" constant="30" id="qzc-2T-ijW"/>
+                            <constraint firstItem="upo-Xy-YkI" firstAttribute="centerX" secondItem="z5u-Xn-5TI" secondAttribute="centerX" id="xji-PG-TRM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dMJ-oo-Io7"/>
+                    <connections>
+                        <outlet property="button1" destination="13O-2c-NRO" id="DYQ-eq-bmp"/>
+                        <outlet property="button2" destination="z5u-Xn-5TI" id="dqj-JT-pmX"/>
+                        <outlet property="button3" destination="upo-Xy-YkI" id="4CT-pJ-FQ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1137" y="399"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7jK-af-euh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="52y-E6-pLH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bMH-44-D4C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="K5o-zJ-hiE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lNL-eP-Gti" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="1059"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="us" width="200" height="100"/>
+    </resources>
 </document>
