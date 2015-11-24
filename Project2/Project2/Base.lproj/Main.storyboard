@@ -24,13 +24,6 @@
                                     <action selector="buttonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c5U-3i-jF3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upo-Xy-YkI">
-                                <rect key="frame" x="200" y="371" width="200" height="100"/>
-                                <state key="normal" image="us"/>
-                                <connections>
-                                    <action selector="buttonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2i-ul-XN5"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-Xn-5TI">
                                 <rect key="frame" x="200" y="230" width="200" height="100"/>
                                 <state key="normal" image="us"/>
@@ -38,10 +31,24 @@
                                     <action selector="buttonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5D-jb-g1b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upo-Xy-YkI">
+                                <rect key="frame" x="200" y="371" width="200" height="100"/>
+                                <state key="normal" image="us"/>
+                                <connections>
+                                    <action selector="buttonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2i-ul-XN5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqd-w1-SUR">
+                                <rect key="frame" x="279" y="72" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="13O-2c-NRO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ok-KD-1DN"/>
+                            <constraint firstItem="Vqd-w1-SUR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O9N-Og-3N0"/>
                             <constraint firstItem="upo-Xy-YkI" firstAttribute="top" secondItem="z5u-Xn-5TI" secondAttribute="bottom" constant="41" id="Ots-T2-HYw"/>
                             <constraint firstItem="upo-Xy-YkI" firstAttribute="centerX" secondItem="z5u-Xn-5TI" secondAttribute="centerX" id="P1V-2Y-JCC"/>
                             <constraint firstItem="13O-2c-NRO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="ZxT-ss-XUh"/>
@@ -55,6 +62,7 @@
                         <outlet property="button1" destination="13O-2c-NRO" id="DYQ-eq-bmp"/>
                         <outlet property="button2" destination="z5u-Xn-5TI" id="dqj-JT-pmX"/>
                         <outlet property="button3" destination="upo-Xy-YkI" id="4CT-pJ-FQ9"/>
+                        <outlet property="labelScore" destination="Vqd-w1-SUR" id="UiS-OI-rwg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

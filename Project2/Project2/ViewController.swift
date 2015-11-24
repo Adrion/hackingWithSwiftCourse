@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var labelScore: UILabel!
 
     var countries = [String]()
     var score = 0
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
         button3.layer.borderWidth = 1
-        
+        labelScore.text = "Score: \(score)"
         askQuestion()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -54,6 +55,8 @@ class ViewController: UIViewController {
         let ac =  UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .Alert)
         ac.addAction(UIAlertAction(title: "Continue", style: .Default, handler: askQuestion))
         presentViewController(ac, animated: true, completion: nil)
+        
+        labelScore.text = "Score: \(score)"
     }
     
     override func didReceiveMemoryWarning() {
