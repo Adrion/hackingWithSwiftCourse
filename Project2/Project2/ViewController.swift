@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    func askQuestion(){
+    func askQuestion(action:UIAlertAction! = nil){
         countries = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(countries) as! [String]
         
         button1.setImage(UIImage(named: countries[0]), forState: .Normal)
@@ -39,6 +39,21 @@ class ViewController: UIViewController {
         
         correctAnswer = GKRandomSource.sharedRandom().nextIntWithUpperBound(3)
         title = countries[correctAnswer].uppercaseString
+    }
+    @IBAction func buttonTaped(sender: UIButton) {
+        var title: String
+        if sender.tag == correctAnswer {
+            ++score
+            title = "Correct"
+        }
+        else {
+            --score
+            title = "Wrong"
+        }
+        
+        let ac =  UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .Alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .Default, handler: askQuestion))
+        presentViewController(ac, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
