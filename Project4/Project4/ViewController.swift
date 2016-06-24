@@ -11,6 +11,7 @@ import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
+    var progressBarView: UIProgressView!
     
     override func loadView() {
         webView = WKWebView()
@@ -23,9 +24,21 @@ class ViewController: UIViewController, WKNavigationDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .Plain, target: self, action: #selector(openTapped))
         
+        progressBarView = UIProgressView(progressViewStyle: .Default)
+        progressBarView.sizeToFit()
+        let progressBarButtonItem = UIBarButtonItem(customView: progressBarView)
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let refresh = UIBarButtonItem(barButtonSystemItem: .Refresh, target: webView, action: #selector(webView.reload))
+        
+        toolbarItems = [progressBarButtonItem, spacer, refresh]
+        navigationController?.toolbarHidden = false
+        
         let url = NSURL(string: "https://www.hackingwithswift.com")!
         webView.loadRequest(NSURLRequest(URL: url))
         webView.allowsBackForwardNavigationGestures = true
+        
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,6 +61,12 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         title = webView.title
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if keyPath == "estimatedProgress" {
+            progressBarView.progress = Float(webView.estimatedProgress)
+        }
     }
 }
 
